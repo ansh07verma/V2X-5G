@@ -242,7 +242,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👥 Authors
 
-- **Suryoday Pratap Singh** - Initial work and development
+- **Ansh Verma** - Initial work and development
 
 ## 🙏 Acknowledgments
 
