@@ -256,7 +256,7 @@ For questions or support, please open an issue on GitHub.
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/Suryooday/V2X5G)
+- [GitHub Repository](https://github.com/ansh07verma/V2X-5G)
 - [SUMO Documentation](https://sumo.dlr.de/docs/)
 - [5G Network Slicing](https://www.3gpp.org/)
 
