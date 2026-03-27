@@ -73,7 +73,7 @@ V2x5G/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/Suryooday/V2X5G.git
+git clone https://github.com/ansh07verma/V2X-5G.git
 cd V2X5G
 ```
 
