@@ -1,31 +1,63 @@
-# V2X 5G Emergency Vehicle Coordination System
+<div align="center">
+
+# 🚑 V2X 5G Emergency Vehicle Coordination System
 
 A comprehensive V2X-based emergency vehicle coordination system using 5G network slicing, multi-EV support, reinforcement learning, and intelligent token negotiation.
+
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![SUMO](https://img.shields.io/badge/SUMO-Simulation-orange.svg)](https://www.eclipse.org/sumo/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/ansh07verma/V2X-5G)](https://github.com/ansh07verma/V2X-5G/issues)
+
+</div>
+
+---
+
+## 📑 Table of Contents
+- [Features](#-features)
+- [Project Structure](#-project-structure)
+- [Installation](#️-installation)
+- [Quick Start](#-quick-start)
+- [Key Metrics](#-key-metrics)
+- [Use Cases](#-use-cases)
+- [Expected Performance](#-expected-performance)
+- [Research Features](#-research-features)
+- [Documentation](#-documentation)
+- [Testing](#-testing)
+- [Contributing](#-contributing)
+- [License & Authors](#-license--authors)
+
+---
 
 ## 🚀 Features
 
 ### Core System
-- **5G Network Slicing**: Dedicated URLLC slices for emergency vehicles
-- **V2X Communication**: Real-time vehicle-to-vehicle and vehicle-to-infrastructure communication
-- **Multi-EV Coordination**: Support for 2-3 simultaneous emergency vehicles with priority-based conflict resolution
-- **Token Negotiation**: Intelligent corridor token management for multi-EV scenarios
-- **FSM with Hysteresis**: Stable state transitions for vehicle behavior
+- **5G Network Slicing**: Dedicated URLLC slices for emergency vehicles.
+- **V2X Communication**: Real-time vehicle-to-vehicle and vehicle-to-infrastructure communication.
+- **Multi-EV Coordination**: Support for 2-3 simultaneous emergency vehicles with priority-based conflict resolution.
+- **Token Negotiation**: Intelligent corridor token management for multi-EV scenarios.
+- **FSM with Hysteresis**: Stable state transitions for vehicle behavior.
 
 ### Controllers
-- **V2X Cooperative Controller**: Full V2X coordination with token negotiation
-- **RL DQN Baseline**: Deep Q-Network reinforcement learning baseline
-- **Greedy Reactive Baseline**: Simple reactive baseline for comparison
+- **V2X Cooperative Controller**: Full V2X coordination with token negotiation.
+- **RL DQN Baseline**: Deep Q-Network reinforcement learning baseline.
+- **Greedy Reactive Baseline**: Simple reactive baseline for comparison.
 
 ### Advanced Features
-- **Scenario Generator**: Create multi-EV scenarios with configurable priorities and overlapping routes
-- **Result Export System**: Export metrics to CSV/JSON for analysis
-- **Visualization System**: Publication-quality plots using Matplotlib/Seaborn
-- **Stability Metrics**: Track oscillations, corridor integrity, and speed variance
-- **Communication Monitoring**: Track latency, reliability, and message success rates
+- **Scenario Generator**: Create multi-EV scenarios with configurable priorities and overlapping routes.
+- **Result Export System**: Export metrics to CSV/JSON for analysis.
+- **Visualization System**: Publication-quality plots using Matplotlib/Seaborn.
+- **Stability Metrics**: Track oscillations, corridor integrity, and speed variance.
+- **Communication Monitoring**: Track latency, reliability, and message success rates.
+
+---
 
 ## 📁 Project Structure
 
-```
+<details>
+<summary><b>Click to expand the project directory structure</b></summary>
+
+```text
 V2x5G/
 ├── src/
 │   ├── behavior/           # Vehicle behavior controllers
@@ -61,40 +93,45 @@ V2x5G/
 ├── results/                # Simulation results
 └── docs/                   # Documentation
 ```
+</details>
+
+---
 
 ## 🛠️ Installation
 
 ### Prerequisites
 - Python 3.8+
-- SUMO (Simulation of Urban MObility)
+- [SUMO (Simulation of Urban MObility)](https://www.eclipse.org/sumo/)
 - Git
 
 ### Setup
 
 1. **Clone the repository**
-```bash
-git clone https://github.com/ansh07verma/V2X-5G.git
-cd V2X5G
-```
+   ```bash
+   git clone https://github.com/ansh07verma/V2X-5G.git
+   cd V2X-5G
+   ```
 
 2. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 3. **Install optional dependencies**
-```bash
-# For RL baseline
-pip install torch
+   ```bash
+   # For RL baseline
+   pip install torch
 
-# For visualization
-pip install matplotlib seaborn
-```
+   # For visualization
+   pip install matplotlib seaborn
+   ```
 
 4. **Install SUMO**
-- macOS: `brew install sumo`
-- Ubuntu: `sudo apt-get install sumo sumo-tools sumo-doc`
-- Windows: Download from [SUMO website](https://www.eclipse.org/sumo/)
+   - **macOS**: `brew install sumo`
+   - **Ubuntu**: `sudo apt-get install sumo sumo-tools sumo-doc`
+   - **Windows**: Download from the [SUMO website](https://www.eclipse.org/sumo/)
+
+---
 
 ## 🚗 Quick Start
 
@@ -136,6 +173,8 @@ results = load_results("results/results_run_001.json")
 plot_multi_ev_clearance(results, save_path="plots/clearance.png")
 ```
 
+---
+
 ## 📊 Key Metrics
 
 ### Performance Metrics
@@ -151,6 +190,8 @@ plot_multi_ev_clearance(results, save_path="plots/clearance.png")
 ### Communication Metrics
 - **Latency**: End-to-end communication latency (avg, p95, p99)
 - **Reliability**: Message success rate and packet loss
+
+---
 
 ## 🎯 Use Cases
 
@@ -181,15 +222,19 @@ negotiation_data = extract_negotiation_metrics(results)
 plot_token_negotiation(negotiation_data, save_path="negotiation.png")
 ```
 
+---
+
 ## 📈 Expected Performance
 
 Based on simulations:
 
 | Controller | Travel Time | Clearance Time | Oscillations | Success Rate |
 |------------|-------------|----------------|--------------|--------------|
-| Greedy Baseline | 150s | 60s | 12 | 70% |
-| RL DQN | 130s | 50s | 5 | 85% |
-| **V2X Cooperative** | **110s** | **35s** | **2** | **98%** |
+| Greedy Baseline | `150s` | `60s` | `12` | `70%` |
+| RL DQN | `130s` | `50s` | `5` | `85%` |
+| **V2X Cooperative** | **`110s`** | **`35s`** | **`2`** | **`98%`** |
+
+---
 
 ## 🔬 Research Features
 
@@ -210,11 +255,15 @@ Based on simulations:
 - Controller comparison charts
 - Publication-quality figures (300 DPI)
 
+---
+
 ## 📚 Documentation
 
-- [Multi-EV Guide](docs/multi_ev_guide.md) - Comprehensive guide for multi-EV scenarios
-- [API Documentation](docs/api.md) - Detailed API reference
-- [Examples](examples/) - Demo scripts for all features
+- 📖 [Multi-EV Guide](docs/multi_ev_guide.md) - Comprehensive guide for multi-EV scenarios
+- 🔧 [API Documentation](docs/api.md) - Detailed API reference
+- 💻 [Examples](examples/) - Demo scripts for all features
+
+---
 
 ## 🧪 Testing
 
@@ -228,6 +277,8 @@ Run specific test:
 python3 tests/test_multi_ev.py
 ```
 
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please:
@@ -236,13 +287,15 @@ Contributions are welcome! Please:
 3. Make your changes
 4. Submit a pull request
 
-## 📄 License
+---
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 📄 License & Authors
 
-## 👥 Authors
+This project is licensed under the **MIT License** - see the LICENSE file for details.
 
-- **Ansh Verma** - Initial work and development
+**Author**: **Ansh Verma** - Initial work and development
+
+---
 
 ## 🙏 Acknowledgments
 
@@ -250,16 +303,14 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - V2X research community
 - 5G network slicing research
 
-## 📞 Contact
+---
+
+## 📞 Contact & Links
 
 For questions or support, please open an issue on GitHub.
 
-## 🔗 Links
+- 🔗 [GitHub Repository](https://github.com/ansh07verma/V2X-5G)
+- 🔗 [SUMO Documentation](https://sumo.dlr.de/docs/)
+- 🔗 [5G Network Slicing](https://www.3gpp.org/)
 
-- [GitHub Repository](https://github.com/ansh07verma/V2X-5G)
-- [SUMO Documentation](https://sumo.dlr.de/docs/)
-- [5G Network Slicing](https://www.3gpp.org/)
-
----
-
-**Note**: This is a research project for studying V2X-based emergency vehicle coordination with 5G network slicing. For production use, additional testing and validation are required.
+> **Note**: This is a research project for studying V2X-based emergency vehicle coordination with 5G network slicing. For production use, additional testing and validation are required.
